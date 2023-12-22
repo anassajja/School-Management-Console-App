@@ -1,0 +1,29 @@
+Course: Windows Server Administration
+
+Description:
+This course provides an introduction to Windows Server administration, covering key concepts, server roles, and basic system configuration.
+
+Topics Covered:
+1. Introduction to Windows Server
+   - Windows Server editions and versions
+   - Core concepts of Windows Server administration
+
+2. Server Roles and Features
+   - Common server roles (e.g., Active Directory, DNS, DHCP)
+   - Installing and configuring server features
+
+3. User and Group Management
+   - Managing users and groups in Active Directory
+   - Configuring group policies
+
+4. Windows Server Networking
+   - Basics of server networking
+   - Configuring network services
+
+5. Project: Setup and Configure Active Directory
+   - Configure Active Directory on a Windows Server
+
+Recommended Resources:
+- Windows Server documentation
+- Online courses on Windows Server administration
+- Windows Server reference materials

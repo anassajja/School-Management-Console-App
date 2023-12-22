@@ -1,0 +1,33 @@
+Course: HTML/CSS Basics
+
+Description:
+This course provides an introduction to the fundamentals of HTML and CSS, the building blocks of web development.
+
+Topics Covered:
+1. Introduction to HTML
+   - Structure of an HTML document
+   - HTML tags and elements
+   - Document hierarchy
+
+2. Introduction to CSS
+   - Styling HTML elements
+   - Selectors and properties
+   - Color and typography
+
+3. Building a Simple Web Page
+   - Creating a webpage structure
+   - Adding content with HTML
+   - Styling with CSS
+
+4. Responsive Design
+   - Media queries
+   - Flexbox and Grid layout
+   - Mobile-first design principles
+
+5. Project: Personal Portfolio
+   - Apply learned concepts to build a simple personal portfolio webpage
+
+Recommended Resources:
+- Online tutorials
+- Documentation on HTML and CSS
+- Practice exercises and coding challenges

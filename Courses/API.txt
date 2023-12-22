@@ -1,0 +1,29 @@
+Course: APIs Development
+
+Description:
+This course delves into the world of API development, covering RESTful principles, designing APIs, and building robust web services.
+
+Topics Covered:
+1. Introduction to APIs
+   - What is an API?
+   - RESTful principles
+
+2. API Design
+   - Designing APIs with OpenAPI (Swagger)
+   - Versioning and documentation
+
+3. Building RESTful APIs
+   - Using Node.js and Express
+   - Handling authentication and authorization
+
+4. Consuming APIs
+   - Making HTTP requests
+   - Working with API responses
+
+5. Project: Build a RESTful API
+   - Create a RESTful API from scratch
+
+Recommended Resources:
+- API design best practices
+- Online tutorials on API development
+- API documentation tools

@@ -1,0 +1,33 @@
+Course: User Experience (UX) Design
+
+Description:
+This course focuses on the principles and practices of User Experience (UX) design, covering key concepts, methodologies, and tools used in creating positive and effective user interfaces.
+
+Topics Covered:
+1. Introduction to UX Design
+   - Basics of UX design and its importance
+   - Understanding user-centered design
+
+2. User Research
+   - Conducting user interviews and surveys
+   - Analyzing user behavior and needs
+
+3. Information Architecture
+   - Organizing and structuring information
+   - Creating effective navigation systems
+
+4. Prototyping and Wireframing
+   - Using prototyping tools for design
+   - Creating wireframes and mockups
+
+5. Usability Testing
+   - Planning and conducting usability tests
+   - Analyzing and implementing feedback
+
+6. Project: Design and Evaluate a User Interface
+   - Apply UX principles to design and evaluate a user interface
+
+Recommended Resources:
+- UX design documentation and case studies
+- Online courses on UX design principles
+- Books on UX design methodologies

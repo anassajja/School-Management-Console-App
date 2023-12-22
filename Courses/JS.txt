@@ -1,0 +1,31 @@
+Course: JavaScript Fundamentals
+
+Description:
+This course covers the fundamentals of JavaScript programming language, including variables, functions, control structures, and more.
+
+Topics Covered:
+1. Introduction to JavaScript
+   - Basic syntax and data types
+   - Variables and operators
+   - Control flow and loops
+
+2. Functions and Objects
+   - Function declarations and expressions
+   - Object-oriented programming concepts
+   - Manipulating objects and arrays
+
+3. DOM Manipulation
+   - Accessing and modifying HTML elements
+   - Event handling
+
+4. Asynchronous JavaScript
+   - Callbacks and Promises
+   - Fetch API for making HTTP requests
+
+5. Project: Interactive Web Page
+   - Apply JavaScript concepts to create an interactive webpage
+
+Recommended Resources:
+- Online tutorials
+- MDN Web Docs
+- JavaScript books and references

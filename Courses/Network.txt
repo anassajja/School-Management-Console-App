@@ -1,0 +1,29 @@
+Course: Networking Fundamentals
+
+Description:
+This course covers the fundamentals of networking, including networking concepts, protocols, and basic network administration.
+
+Topics Covered:
+1. Introduction to Networking
+   - Basics of networking and communication
+   - OSI and TCP/IP models
+
+2. Networking Protocols
+   - Overview of common networking protocols (e.g., TCP, UDP, IP)
+   - DNS and DHCP protocols
+
+3. IP Addressing and Subnetting
+   - Understanding IP addresses
+   - Subnetting basics
+
+4. Network Security
+   - Firewalls and network security measures
+   - VPNs and secure communication
+
+5. Project: Setup and Configure a Small Network
+   - Configure a small network with routers, switches, and computers
+
+Recommended Resources:
+- Networking documentation and guides
+- Online courses on networking fundamentals
+- Networking books and tutorials

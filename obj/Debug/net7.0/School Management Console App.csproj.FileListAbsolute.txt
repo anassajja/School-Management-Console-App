@@ -1,0 +1,14 @@
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\bin\Debug\net7.0\School Management Console App.exe
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\bin\Debug\net7.0\School Management Console App.deps.json
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\bin\Debug\net7.0\School Management Console App.runtimeconfig.json
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\bin\Debug\net7.0\School Management Console App.dll
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\bin\Debug\net7.0\School Management Console App.pdb
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.AssemblyInfoInputs.cache
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.AssemblyInfo.cs
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.csproj.CoreCompileInputs.cache
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.dll
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\refint\School Management Console App.dll
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.pdb
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.genruntimeconfig.cache
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\ref\School Management Console App.dll

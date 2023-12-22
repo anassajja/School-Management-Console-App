@@ -1,0 +1,29 @@
+Course: Introduction to Databases
+
+Description:
+This course provides an introduction to databases, covering relational databases, SQL, and basic database design concepts.
+
+Topics Covered:
+1. Introduction to Databases
+   - Types of databases
+   - Relational vs. non-relational databases
+
+2. SQL Fundamentals
+   - Basic SQL queries
+   - Creating and modifying tables
+
+3. Database Design
+   - Normalization and denormalization
+   - Entity-Relationship Diagrams (ERD)
+
+4. Connecting to Databases in Applications
+   - Using SQL in programming languages (e.g., Node.js, Python)
+   - ORM (Object-Relational Mapping) concepts
+
+5. Project: Simple Database Application
+   - Create a basic application that interacts with a relational database
+
+Recommended Resources:
+- SQL documentation and tutorials
+- Database design guides
+- Online courses on databases

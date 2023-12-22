@@ -1,0 +1,29 @@
+Course: Cybersecurity Fundamentals
+
+Description:
+This course covers the fundamentals of cybersecurity, including principles of information security, threat detection, and basic defensive strategies.
+
+Topics Covered:
+1. Introduction to Cybersecurity
+   - Understanding the cybersecurity landscape
+   - Key cybersecurity concepts and terminologies
+
+2. Threats and Attack Vectors
+   - Types of cyber threats
+   - Common attack vectors
+
+3. Defensive Strategies
+   - Antivirus and anti-malware tools
+   - Firewalls and intrusion detection/prevention systems
+
+4. Cryptography Basics
+   - Encryption and decryption
+   - Secure communication
+
+5. Project: Basic Security Audit
+   - Conduct a basic security audit on a system
+
+Recommended Resources:
+- Cybersecurity documentation and guidelines
+- Online courses on cybersecurity fundamentals
+- Books on cybersecurity

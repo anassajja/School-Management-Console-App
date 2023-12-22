@@ -1,0 +1,29 @@
+Course: Introduction to Node.js
+
+Description:
+This course introduces Node.js, a JavaScript runtime built on Chrome's V8 JavaScript engine. Learn to build scalable network applications using Node.js.
+
+Topics Covered:
+1. Introduction to Node.js
+   - Installing Node.js and npm
+   - Understanding the event-driven architecture
+
+2. Node.js Modules
+   - Creating and using modules
+   - npm packages and package.json
+
+3. Express.js
+   - Building web applications with Express
+   - Routing and middleware
+
+4. Asynchronous Programming in Node.js
+   - Callbacks, Promises, and async/await
+   - Handling file operations and I/O
+
+5. Project: RESTful API
+   - Build a simple RESTful API using Node.js and Express
+
+Recommended Resources:
+- Official Node.js documentation
+- Online tutorials and courses
+- Node.js books

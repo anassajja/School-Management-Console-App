@@ -1,0 +1,29 @@
+Course: Linux System Administration
+
+Description:
+This course focuses on the fundamentals of Linux system administration, covering essential command-line tools, file system navigation, and user management.
+
+Topics Covered:
+1. Introduction to Linux
+   - Linux distributions and kernel
+   - Command-line interface basics
+
+2. File System and Directory Structure
+   - Understanding Linux file systems
+   - Navigating and managing files and directories
+
+3. Users and Permissions
+   - User and group management
+   - File and directory permissions
+
+4. Linux Services and Processes
+   - Managing services and processes
+   - Process monitoring and control
+
+5. Project: Setup and Configure a Web Server
+   - Install and configure a basic web server on Linux
+
+Recommended Resources:
+- Linux documentation and man pages
+- Online courses on Linux system administration
+- Linux command-line reference guides

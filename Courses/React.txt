@@ -1,0 +1,29 @@
+Course: React.js Development
+
+Description:
+This course focuses on building user interfaces using React.js, a JavaScript library for building interactive UIs.
+
+Topics Covered:
+1. Introduction to React
+   - Understanding components and JSX
+   - State and props
+
+2. React Components and Lifecycle
+   - Class and functional components
+   - Component lifecycle methods
+
+3. State Management
+   - Managing state in React applications
+   - Context API and state lifting
+
+4. React Router
+   - Navigation in React applications
+   - Dynamic routing
+
+5. Project: Single Page Application
+   - Build a single-page application using React
+
+Recommended Resources:
+- Official React documentation
+- Online courses on React
+- React books and tutorials
