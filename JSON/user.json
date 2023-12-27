@@ -1,0 +1,22 @@
+[
+  {
+    "Username": "Amine_ZNIBER",
+    "Password": "ZNIBER2024##",
+    "Role": "admin"
+  },
+  {
+    "Username": "Mehdi_LOUKACH",
+    "Password": "LOUKACH2024@@",
+    "Role": "teacher"
+  },
+  {
+    "Username": "Badr_FAWZI",
+    "Password": "FAWZI2024##",
+    "Role": "admin"
+  },
+  {
+    "Username": "Anass_AJJA",
+    "Password": "AJJA2024YNOV$$",
+    "Role": "student"
+  }
+]

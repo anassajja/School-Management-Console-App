@@ -1,5 +1,7 @@
 using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
 
 namespace SCHOOL_MANAGEMENT_CONSOLE_APP
 {
@@ -28,68 +30,73 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\n************************************************\n");
+            Console.WriteLine("                  Add Student");
+            Console.WriteLine("\n************************************************\n");
             Console.ResetColor();
             Console.Write("Enter Student First Name: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string firstName = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter Student Last Name: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string lastName = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
-            Console.WriteLine("Enter Student Gender: ");
+            Console.WriteLine("");
+            Console.Write("Enter Student Gender ( male, female, other): ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string gender = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter Student ID: ");
             int id = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter Student Phone Number: ");
             int phoneNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter Student Email: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string email = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter Student Address: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string address = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
-            Console.Write("Enter Student Date of Birth: ");
+            Console.WriteLine("");
+            Console.Write("Enter Student Birth Date: ");
             DateTime dateOfBirth = Convert.ToDateTime(Console.ReadLine());
-            Console.WriteLine("\n");
-            Console.WriteLine("Enter Student Nationality: ");
+            Console.WriteLine("");
+            Console.Write("Enter Student Nationality: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string nationality = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
-            Console.WriteLine("Enter Student Class: ");
+            Console.WriteLine("");
+            Console.Write("Enter Student Class: ");
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string cclass = Console.ReadLine();
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter Student Level: ");
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string level = Console.ReadLine();
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter Student Expertise: ");
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string expertise = Console.ReadLine();
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             #pragma warning disable CS8604 // Possible null reference argument.
             Student newStudent = new(firstName, lastName, gender, id, phoneNumber, email, address, dateOfBirth, nationality, cclass, level, expertise);
             #pragma warning restore CS8604 // Possible null reference argument.
             students.Add(newStudent);
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\nStudent added successfully!\n");
+            Console.WriteLine("Student added successfully !");
             Console.ResetColor();
+            Console.WriteLine("");
+            // Save students to json file
+            SaveStudentsToJson();
         }
 
         public static void ViewStudents()
@@ -99,10 +106,56 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
             Console.WriteLine("                  List of Students");
             Console.WriteLine("\n************************************************\n");
             Console.ResetColor();
+            Console.WriteLine("");
+            // Upload students from json file
+            LoadStudentsFromJson();
+            Console.WriteLine("");
             foreach (var student in students)
             {
+                if (students.Count == 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("No students found !");
+                    Console.ResetColor();
+                }
+                else{
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Student N`{0} : ", students.IndexOf(student) + 1);
+                    Console.WriteLine($"Student ID : {student.Id} \t Student Full Name : {student.FirstName + " "}{student.LastName}");
+                    Console.WriteLine("");
+                    Console.ResetColor();
+                }
+            }
+        }
+
+        public static void DisplayStudentDetails()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\n************************************************\n");
+            Console.WriteLine("                 Display Student Details");
+            Console.WriteLine("\n************************************************\n");
+            Console.ResetColor();
+            Console.Write("Enter Student ID: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("");
+            // Upload students from json file
+            LoadStudentsFromJson();
+            Console.WriteLine("");
+            // Find student by id
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+            Student studentToDisplay = students.Find(s => s.Id == id);  
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+            if (studentToDisplay != null)
+            {
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine($"First Name: {student.FirstName}, Last Name: {student.LastName}, Gender: {student.Gender}, ID: {student.Id}, Phone Number: {student.PhoneNumber}, Email: {student.Email}, Address: {student.Address}, Birth Date: {student.DateOfBirth}, Nationality: {student.Nationality}, Class {student.Class}, Level: {student.Level}, Expertise {student.Experise} \n");
+                Console.WriteLine("                  Student Details:                    ");
+                Console.WriteLine($"Student ID : {studentToDisplay.Id} \t Student First Name : {studentToDisplay.FirstName} \t Student Last Name : {studentToDisplay.LastName} \t Student Gender : {studentToDisplay.Gender} \t Student Email : {studentToDisplay.Email} \t Student Phone Number : {studentToDisplay.PhoneNumber} \t Student Address : {studentToDisplay.Address} \t Student Birth Date : {studentToDisplay.DateOfBirth} \t Student Nationality : {studentToDisplay.Nationality} \t Student Class : {studentToDisplay.Class} \t Student Level : {studentToDisplay.Level} \t Student Expertise : {studentToDisplay.Experise}");
+                Console.ResetColor();   
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Student not found !\n");
                 Console.ResetColor();
             }
         }
@@ -111,10 +164,12 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\n************************************************\n");
+            Console.WriteLine("                  Update Student");
+            Console.WriteLine("\n************************************************\n");
             Console.ResetColor();
             Console.Write("Enter Student ID: ");
             int id = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\n");
+            Console.WriteLine("");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             Student studentToUpdate = students.Find(s => s.Id == id);
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
@@ -124,55 +179,55 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string firstName = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-                Console.WriteLine("\n");
+                Console.WriteLine("");
                 Console.Write("Enter new Student Last Name: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string lastName = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-                Console.WriteLine("\n");
-                Console.WriteLine("Enter new student Gender:");
+                Console.WriteLine("");
+                Console.Write("Enter new student Gender:");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string gender = Console.ReadLine();
-                Console.WriteLine("\n");
+                Console.WriteLine("");
                 Console.Write("Enter new Student ID: ");
                 int newId = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("\n");
-                Console.WriteLine("Enter new Student Phone Number: ");
+                Console.WriteLine("");
+                Console.Write("Enter new Student Phone Number: ");
                 int phoneNumber = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("\n");
-                Console.WriteLine("Enter new Student Email: ");
+                Console.WriteLine("");
+                Console.Write("Enter new Student Email: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string email = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-                Console.WriteLine("\n");
-                Console.WriteLine("Enter new Student Address: ");
+                Console.WriteLine("");
+                Console.Write("Enter new Student Address: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string address = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-                Console.WriteLine("\n");
-                Console.WriteLine("Enter new Student Date of Birth: ");
+                Console.WriteLine("");
+                Console.Write("Enter new Student Birth Date: ");
                 DateTime dateOfBirth = Convert.ToDateTime(Console.ReadLine());
-                Console.WriteLine("\n");
-                Console.WriteLine("Enter new Student Nationality: ");
+                Console.WriteLine("");
+                Console.Write("Enter new Student Nationality: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string nationality = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-                Console.WriteLine("\n");
+                Console.WriteLine("");
                 Console.Write("Enter new Student Class: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string cclass = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type
-                Console.WriteLine("\n");
+                Console.WriteLine("");
                 Console.Write("Enter new student level: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string level = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-                Console.WriteLine("\n");
+                Console.WriteLine("");
                 Console.Write("Enter new student expertise: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 string expertise = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-                Console.WriteLine("\n");
+                Console.WriteLine("");
 #pragma warning disable CS8601 // Possible null reference assignment.
                 studentToUpdate.FirstName = firstName;
 #pragma warning restore CS8601 // Possible null reference assignment.
@@ -200,8 +255,9 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                 studentToUpdate.Experise = expertise;
                 students.Add(studentToUpdate);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Student updated successfully!\n");
+                Console.WriteLine("Student updated successfully !");
                 Console.ResetColor();
+                Console.WriteLine("");
             }
             else
             {
@@ -209,12 +265,16 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                 Console.WriteLine("Student not found.\n");
                 Console.ResetColor();
             }
+            // Save students to json file
+            SaveStudentsToJson();
+            Console.WriteLine("");
         }
-
 
         public static void DeleteStudent()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\n************************************************\n");
+            Console.WriteLine("                  Delete Student");
             Console.WriteLine("\n************************************************\n");
             Console.ResetColor();
             Console.Write("Enter student ID: ");
@@ -227,8 +287,12 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
             {
                 students.Remove(studentToRemove);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Student deleted successfully!\n");
+                Console.WriteLine("Student deleted successfully !");
                 Console.ResetColor();
+                Console.WriteLine("");
+                // Save students to json file
+                SaveStudentsToJson();
+                Console.WriteLine("");
             }
             else
             {
@@ -240,49 +304,107 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
 
         public static void ManageStudents()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\n=======================================\n");
-            Console.WriteLine("          Student Management System        ");
-            Console.WriteLine("\n=======================================\n");
-            Console.WriteLine("1. Add Student\n");
-            Console.WriteLine("2. View Students\n");
-            Console.WriteLine("3. Update Student\n");
-            Console.WriteLine("4. Delete Student\n");
-            Console.WriteLine("5. Back to main menu\n");
-            Console.ResetColor(); // Reset color to default
-            Console.Write("Enter your choice: ");
-
-            int choice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine('\n');
-
-            switch (choice)
+            do
             {
-                case 1:
-                    AddStudent();
-                    break;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n========================================================\n");
+                Console.WriteLine("                 Student Management System");
+                Console.WriteLine("\n========================================================\n");
+                Console.WriteLine("1. Add Student\n");
+                Console.WriteLine("2. Display Student Details\n");
+                Console.WriteLine("3. View Students List\n");
+                Console.WriteLine("4. Update Student\n");
+                Console.WriteLine("5. Delete Student\n");
+                Console.WriteLine("6. Back to main menu\n");
+                Console.ResetColor(); // Reset color to default
+                Console.Write("Enter your choice: ");
 
-                case 2:
-                    ViewStudents();
-                    break;
+                int choice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine('\n');
 
-                case 3:
-                    UpdateStudent();
-                    break;
+                switch (choice)
+                {
+                    case 1:
+                        AddStudent();
+                        break;
 
-                case 4:
-                    DeleteStudent();
-                    break;
+                    case 2:
+                        DisplayStudentDetails();
+                        break;
 
-                case 5:
-                    return; // Retuns to main menu
+                    case 3:
+                        ViewStudents();
+                        break;
 
-                default:
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Invalid choice. Try again.\n");
-                    Console.ResetColor();
-                    break;
-            }  
+                    case 4:
+                        UpdateStudent();
+                        break;
+
+                    case 5:
+                        DeleteStudent();
+                        break;
+
+                    case 6:
+                        Program.MainMenu();
+                        break; // Retuns to main menu
+
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Invalid choice. Try again.\n");
+                        Console.ResetColor();
+                        break;
+                    }  
+
+            } while (true); // Loop until user enters 6 to return to main menu
         }
 
+        public static void SaveStudentsToJson()
+        {
+            string json = JsonConvert.SerializeObject(students, Formatting.Indented);
+
+            try
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+
+                Console.WriteLine("\nSaving Students...\n");
+                File.WriteAllText(@"C:\Users\luffy\OneDrive\Bureau\School Management Console App\JSON\student.json", json);
+                Console.WriteLine("\nStudent data saved to 'student.json' successfully !\n");
+                Console.ResetColor();
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\nError Saving Student Data: {ex.Message} !\n");
+                Console.ResetColor();
+            }
+        }
+
+        public static void LoadStudentsFromJson()
+        {
+            try
+            {
+                if (File.Exists(@"C:\Users\luffy\OneDrive\Bureau\School Management Console App\JSON\student.json"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nUploading Students...\n");
+                    string json = File.ReadAllText(@"C:\Users\luffy\OneDrive\Bureau\School Management Console App\JSON\student.json");
+                    students = JsonConvert.DeserializeObject<List<Student>>(json);
+                    Console.WriteLine("\nStudents data loaded from 'student.json' successfully !\n");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nFile 'student.json' not found !\n");
+                    Console.ResetColor();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\nError Uploading Students Data: {ex.Message} !\n");
+                Console.ResetColor();
+            }
+        }
     }
 }

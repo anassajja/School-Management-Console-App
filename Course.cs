@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace SCHOOL_MANAGEMENT_CONSOLE_APP
 {
@@ -33,54 +34,60 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\n************************************************\n");
+            Console.WriteLine("                  Add Course:");
+            Console.WriteLine("\n************************************************\n");
             Console.ResetColor();
             Console.Write("Enter course name : ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string name = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter associated module : ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string associatedModule = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter course debut date: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
             string courseDebutDate = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter course end date: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
             string courseEndDate = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter course teacher name: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
             string courseTeacherName = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-            Console.WriteLine("\n");
-            Console.Write("Enter course classroom: ");
+            Console.WriteLine("");
+            Console.Write("Enter course classroom number: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
             string courseClassroom = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter course class: ");
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
             string courseClass = Console.ReadLine();
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.Write("Enter course file path: ");
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
             string coursePath = Console.ReadLine();
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             #pragma warning disable CS8604 // Possible null reference argument.
             Course newCourse = new(name, associatedModule, courseDebutDate, courseEndDate, courseTeacherName, courseClassroom, courseClass, coursePath);
             #pragma warning restore CS8604 // Possible null reference argument.
             Courses.Add(newCourse);
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\nCourse added successfully!\n");
+            Console.WriteLine("Course added successfully !");
             Console.ResetColor();
+            Console.WriteLine("");
+            // Save courses to JSON file
+            SaveCoursesToJson();
+            Console.WriteLine("");
         }
 
         public static void ViewCourses()
@@ -90,6 +97,9 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
             Console.WriteLine("                    List of Courses                ");
             Console.WriteLine("\n************************************************\n");
             Console.ResetColor();
+            // Upload courses from JSON file
+            LoadCoursesFromJson();
+            Console.WriteLine("");
 
             foreach (var course in Courses)
             {
@@ -102,6 +112,8 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
         public static void UpdateCourse()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\n************************************************\n");
+            Console.WriteLine("                  Update Course:");
             Console.WriteLine("\n************************************************\n");
             Console.ResetColor();
             Console.Write("Enter course name to update: "); 
@@ -117,18 +129,57 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
                     string newNameC = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-                    Console.WriteLine("\n");
+                    Console.WriteLine("");
                     Console.Write("Enter new course associated module: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
                     string newAssociatedModule = Console.ReadLine();
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-                    Console.WriteLine("\n");
+                    Console.WriteLine("");
                     Console.Write("Enter new course file path: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
                     string newCoursePath = Console.ReadLine();
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    Console.WriteLine("");
+                    Console.Write("Enter new course debut date: ");
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    string newCourseDebutDate = Console.ReadLine();
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    Console.WriteLine("");
+                    Console.Write("Enter new course end date: ");
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    string newCourseEndDate = Console.ReadLine();
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    Console.WriteLine("");
+                    Console.Write("Enter new course teacher name: ");
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    string newCourseTeacherName = Console.ReadLine();
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    Console.WriteLine("");
+                    Console.Write("Enter new course classroom number: ");
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    string newCourseClassroom = Console.ReadLine();
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    Console.WriteLine("");
+                    Console.Write("Enter new course class: ");
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    string newCourseClass = Console.ReadLine();         
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
+                    Console.WriteLine("");
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    course.CourseClass = newCourseClass;
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    course.CourseClassroom = newCourseClassroom;
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    course.CourseTeacherName = newCourseTeacherName;
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.   
+                    course.CourseEndDate = newCourseEndDate;
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    course.CourseDebutDate = newCourseDebutDate;
+#pragma warning restore CS8601 // Possible null reference assignment.
                     CoursePath = newCoursePath;
 #pragma warning disable CS8601 // Possible null reference assignment.
                     course.NameC = newNameC;
@@ -137,14 +188,19 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                     course.AssociatedModule = newAssociatedModule;
 #pragma warning restore CS8601 // Possible null reference assignment.
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Course updated successfully.\n");
+                    Console.WriteLine("");
+                    Console.WriteLine("Course updated successfully !");
                     Console.ResetColor();
+                    Console.WriteLine("");
+                    // Save courses to JSON file
+                    SaveCoursesToJson();
+                    Console.WriteLine("");
                     return;
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Course not found.\n");
+                    Console.WriteLine("Course not found !\n");
                     Console.ResetColor();
                 }
             }
@@ -154,12 +210,14 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\n************************************************\n");
+            Console.WriteLine("                  Delete Course:");
+            Console.WriteLine("\n************************************************\n");
             Console.ResetColor();
             Console.Write("Enter course name to delete: ");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.'
             string nameToDelete = Console.ReadLine();       
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.'
-            Console.WriteLine("\n");
+
             foreach(var course in Courses)
             {
                 if (course.NameC == nameToDelete)
@@ -168,6 +226,10 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Course deleted successfully.\n");
                     Console.ResetColor();
+                    Console.WriteLine("");
+                    // Save courses to JSON file
+                    SaveCoursesToJson();
+                    Console.WriteLine("");
                     return;
                 }
                 else
@@ -177,59 +239,6 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                     Console.ResetColor();
                 }
             }
-        }
-
-        public static void ManageCourses()
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\n=======================================\n");
-            Console.WriteLine("           Courses Management System       ");
-            Console.WriteLine("\n=======================================\n");
-            Console.WriteLine("1. Add Course\n");
-            Console.WriteLine("2. View Courses\n");
-            Console.WriteLine("3. Display Course Details\n");
-            Console.WriteLine("4. Update Course\n");
-            Console.WriteLine("5. Delet Course\n");
-            Console.WriteLine("6. Back to main menu\n");
-            Console.ResetColor();
-            Console.Write("Enter your choice: ");
-
-            int choice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine('\n');
-
-            switch (choice)
-            {
-                case 1:
-                    AddCourse();
-                    break;
-
-                case 2:
-                    ViewCourses();
-                    break;
-
-                case 3:
-#pragma warning disable CS8604 // Possible null reference argument.
-                    DisplayCourseDetails(CoursePath);
-#pragma warning restore CS8604 // Possible null reference argument.
-                    break;
-
-                case 4:
-                    UpdateCourse();
-                    break;
-
-                case 5:
-                    DeleteCourse();
-                    break;
-
-                case 6:
-                    return; // Retuns to main menu
-
-                default:
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Invalid choice. Try again.\n");
-                    Console.ResetColor();
-                    break;
-            }  
         }
 
         public static void DisplayCourseDetails(string filePath)
@@ -243,7 +252,7 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("File not found.");
+                    Console.WriteLine("File not found.\n");
                     Console.ResetColor();
                 }
             }
@@ -251,6 +260,115 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"An error occurred: {ex.Message}");
+                Console.ResetColor();
+            }
+        }
+
+        public static void ManageCourses()
+        {
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n=======================================\n");
+                Console.WriteLine("           Courses Management System       ");
+                Console.WriteLine("\n=======================================\n");
+                Console.WriteLine("1. Add Course\n");
+                Console.WriteLine("2. View Courses\n");
+                Console.WriteLine("3. Display Course Details\n");
+                Console.WriteLine("4. Update Course\n");
+                Console.WriteLine("5. Delet Course\n");
+                Console.WriteLine("6. Back to main menu\n");
+                Console.ResetColor();
+                Console.Write("Enter your choice: ");
+
+                int choice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine('\n');
+
+                switch (choice)
+                {
+                    case 1:
+                        AddCourse();
+                        break;
+
+                    case 2:
+                        ViewCourses();
+                        break;
+
+                    case 3:
+#pragma warning disable CS8604 // Possible null reference argument.
+                        DisplayCourseDetails(CoursePath);
+#pragma warning restore CS8604 // Possible null reference argument.
+                        break;
+
+                    case 4:
+                        UpdateCourse();
+                        break;
+
+                    case 5:
+                        DeleteCourse();
+                        break;
+
+                    case 6:
+                        Program.MainMenu();
+                        break; // Retuns to main menu
+
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Invalid choice. Try again.\n");
+                        Console.ResetColor();
+                        break;
+                } 
+
+            } while (true); // Infinite loop
+        }
+
+        public static void SaveCoursesToJson()
+        {
+            string json = JsonConvert.SerializeObject(Courses, Formatting.Indented);
+
+            try
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Saving Courses...");
+                File.WriteAllText(@"C:\Users\luffy\OneDrive\Bureau\School Management Console App\JSON\course.json", json);
+                Console.WriteLine("Course data saved to 'course.json' successfully !");
+                Console.ResetColor();
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error Saving Course Data: {ex.Message}\n");
+                Console.ResetColor();
+            }
+        }
+
+        public static void LoadCoursesFromJson()
+        {
+            try
+            {
+                if (File.Exists(@"C:\Users\luffy\OneDrive\Bureau\School Management Console App\JSON\course.json"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("");
+                    Console.WriteLine("Uploading Courses...");
+                    string json = File.ReadAllText(@"C:\Users\luffy\OneDrive\Bureau\School Management Console App\JSON\course.json");
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    Courses = JsonConvert.DeserializeObject<List<Course>>(json);
+                    Console.WriteLine("");
+                    Console.WriteLine("Admin data Uploaded from 'course.json' successfully !\n");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n'course.json' file not found. No course data Uploaded !\n");
+                    Console.ResetColor();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\nError Uploading course data: {ex.Message} !\n");
                 Console.ResetColor();
             }
         }

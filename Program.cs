@@ -12,7 +12,7 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
         public static void Main()
         {
             // Specify the sound file path
-            string soundPath = @"\Music\DrDre.wav";
+            string soundPath = @"C:\Users\luffy\OneDrive\Bureau\School Management Console App\Music\DrDre.wav";
             // Use the SND_ASYNC flag to play the sound asynchronously
             uint flags = 0x1 | 0x2;
             // Call PlaySound function
@@ -20,7 +20,7 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("          Enjoy Listening DR DRE Music          ");
             Console.ResetColor(); // Reset color to default
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("  ____  _               ____             _      ");
             Console.WriteLine(" |  _ \\(_) ___ ___ ___|  _ \\ ___  _ __ | | ___ ");
             Console.WriteLine(" | | | | |/ __/ __/ _ \\ |_) / _ \\| '_ \\| |/ _ \\");
@@ -28,28 +28,43 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
             Console.WriteLine(" |____/|_|\\___\\___\\___|_|   \\___/|_| |_|_|\\___|");
             Console.WriteLine("");
             Console.WriteLine("                 YNOV CAMPUS CASABLANCA             ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n=======================================================\n");
             Console.WriteLine("           WELCOME TO SCHOOL MANAGEMENT SYSTEM             ");
             Console.WriteLine("\n=======================================================\n");
             Console.ResetColor(); // Reset color to default
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("Press any key to continue...");
+            Console.ResetColor(); // Reset color to default
+            Console.ReadKey();
+            Console.Clear();
+            // Main menu
+            MainMenu();
+            // Thread.Sleep(2000);
+            Console.Clear();
+        }
 
+        public static void MainMenu()
+        {
             bool exit = false;
 
             while (!exit)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("1. Login < ONLY FOR USERS! >\n");
+                Console.WriteLine("=======================================================\n");
+                Console.WriteLine("                   MAIN MENU\n");
+                Console.WriteLine("=======================================================\n");
+                Console.WriteLine("1. Login (ONLY USERS ACCESS !)\n");
                 Console.WriteLine("2. Display Weekly Schedules For Students \n");
                 Console.WriteLine("3. The Calendar \n");
                 Console.WriteLine("4. Display Course Details\n");
-                Console.WriteLine("5. Manage Users < ONLY ADMIN ACCESS ! >\n");
-                Console.WriteLine("6. Manage Students < ONLY ADMIN ACCESS ! > \n");
-                Console.WriteLine("7. Manage Teachers < ONLY ADMIN ACCESS ! >\n");
-                Console.WriteLine("8. Manage Administrators < ONLY ADMIN ACESS ! >\n");
-                Console.WriteLine("9. Manage Courses< ONLY ADMIN & TEACHERS ACCESS ! >\n");
-                Console.WriteLine("10. Manage Modules < ONLY ADMIN & TEACHERS ACCESS ! >\n");
-                Console.WriteLine("11. Exit\n");
+                Console.WriteLine("5. Manage Users (ONLY ADMIN ACCESS !)\n");
+                Console.WriteLine("6. Manage Students (ONLY ADMIN ACCESS !)\n");
+                Console.WriteLine("7. Manage Teachers (ONLY ADMIN ACCESS !)\n");
+                Console.WriteLine("8. Manage Administrators (ONLY ADMIN ACCESS !)\n");
+                Console.WriteLine("9. Manage Courses (ONLY ADMIN ACCESS !)\n");
+                Console.WriteLine("10. Manage Modules (ONLY ADMIN ACCESS !)\n");
+                Console.WriteLine("11. Logout \n");
+                Console.WriteLine("12. Exit\n");
                 Console.ResetColor(); // Reset color to default
                 Console.Write("Enter your choice: ");
 
@@ -79,7 +94,7 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                             else
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine("\nCourse path is null.\n");
+                                Console.WriteLine("\nCourse path is null !\n");
                                 Console.ResetColor();
                             }
                             break;
@@ -109,24 +124,40 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                             break;
 
                         case 11:
+#pragma warning disable CS8604 // Possible null reference argument.
+                            Login.LogoutUser(Login.CurrentUser);
+#pragma warning restore CS8604 // Possible null reference argument.
+                            break;
+
+                        case 12:
                             exit = true;
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("\nThank you for using our application. Goodbye!\n");
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            Console.WriteLine("\nTHANK YOU FOR USING OUR CONSOLE APP. GOODBYE !\n");
+                            Console.WriteLine("  _______ _                 _     ");
+                            Console.WriteLine(" |__   __| |               | |    ");
+                            Console.WriteLine("    | |  | |__   __ _ _ __ | | __ ");
+                            Console.WriteLine("    | |  | '_ \\ / _` | '_ \\| |/ / ");
+                            Console.WriteLine("    | |  | | | | (_| | | | |   <  ");
+                            Console.WriteLine("    |_|  |_| |_|\\__,_|_| |_|_|\\_\\ ");
+                            Console.WriteLine();
+                            Console.WriteLine("     YOU FOR USING OUR CONSOLE APP ! ");
+                            Console.WriteLine();
+                            Console.WriteLine("                GOODBYE !            ");
+                            Console.WriteLine();
                             Console.ResetColor();
                             break;
 
                         default:
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Invalid choice. Try again.\n");
+                            Console.WriteLine("Invalid choice ! Try again.\n");
                             Console.ResetColor();
                             break;
                     }
                 }
-
                 catch (FormatException)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Invalid input. Please enter a valid number.\n");
+                    Console.WriteLine("\nInvalid input ! Please enter a valid number.\n");
                     Console.ResetColor();
                     continue;
                 }

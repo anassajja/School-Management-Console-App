@@ -1,0 +1,30 @@
+[
+  {
+    "Class": "B2",
+    "Level": "Good",
+    "Experise": "Developement",
+    "FirstName": "Anass",
+    "LastName": "AJJA",
+    "Gender": "male",
+    "Id": 1111,
+    "PhoneNumber": 771387238,
+    "Email": "anass.ajja@ynov.com",
+    "Address": "Lot RIAD 3 Benguerir Morocco",
+    "DateOfBirth": "2001-03-11T00:00:00",
+    "Nationality": "Moroccan"
+  },
+  {
+    "Class": "B2",
+    "Level": "Good",
+    "Experise": "Developement",
+    "FirstName": "Anass",
+    "LastName": "AJJA",
+    "Gender": "male",
+    "Id": 1111,
+    "PhoneNumber": 771387238,
+    "Email": "anass.ajja@ynov.com",
+    "Address": "Lot RIAD 3 Benguerir Morocco",
+    "DateOfBirth": "2001-03-11T00:00:00",
+    "Nationality": "Moroccan"
+  }
+]

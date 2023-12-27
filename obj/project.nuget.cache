@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "m+13Hdnn7OFDQtPYoHqucDXxB3QkzLhtjBcU7vJPufYuXeZsdMfEElOe9WFTOaLzWOR644wpXucHPr0kqFD9og==",
+  "dgSpecHash": "n0LjfujxlFCRKsx58Oz3UGLZrbUqcra3Wia0e5PGqwFp7BdUEQ79YQJRg7r5NWdiCE1F/mONx2YxGdUbLyqK6A==",
   "success": true,
   "projectFilePath": "C:\\Users\\luffy\\OneDrive\\Bureau\\School Management Console App\\School Management Console App.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\luffy\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\luffy\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

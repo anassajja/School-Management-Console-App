@@ -12,3 +12,7 @@ C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\re
 C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.pdb
 C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.genruntimeconfig.cache
 C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\ref\School Management Console App.dll
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\bin\Debug\net7.0\CsvHelper.dll
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.csproj.AssemblyReference.cache
+C:\Users\luffy\OneDrive\Bureau\School Management Console App\obj\Debug\net7.0\School Management Console App.csproj.CopyComplete
