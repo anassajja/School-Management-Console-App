@@ -130,7 +130,6 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                             break;
 
                         case 12:
-                            exit = true;
                             Console.ForegroundColor = ConsoleColor.DarkYellow;
                             Console.WriteLine("\nTHANK YOU FOR USING OUR CONSOLE APP. GOODBYE !\n");
                             Console.WriteLine("  _______ _                 _     ");
@@ -145,6 +144,7 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
                             Console.WriteLine("                GOODBYE !            ");
                             Console.WriteLine();
                             Console.ResetColor();
+                            exit = true;
                             break;
 
                         default:
