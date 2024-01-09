@@ -45,17 +45,3 @@ Follow these instructions to get a copy of the project up and running on your lo
 1. Run the application.
 2. Follow the on-screen instructions to navigate through different features.
 3. Enjoy managing school-related tasks efficiently!
-
-## Contributing
-
-If you'd like to contribute to this project, please follow the [Contribution Guidelines](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- Special thanks to [OpenAI](https://www.openai.com/) for providing the GPT-3.5 model that assisted in generating this README.
-
-Feel free to customize this README according to your specific project details and needs. Good luck with your School Management Console App!
