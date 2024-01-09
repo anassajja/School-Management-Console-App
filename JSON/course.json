@@ -7,5 +7,14 @@
     "CourseTeacherName": "Mehdi LOUKACH",
     "CourseClassroom": "B2",
     "CourseClass": "B2"
+  },
+  {
+    "NameC": "UX",
+    "AssociatedModule": "UX",
+    "CourseDebutDate": "1/28/2024",
+    "CourseEndDate": "2/28/2024",
+    "CourseTeacherName": "Karim LAAZIZI",
+    "CourseClassroom": "B2",
+    "CourseClass": "B2"
   }
 ]

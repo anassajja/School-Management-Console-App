@@ -219,7 +219,7 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
             Console.Write("Enter Administrator Birth Date: ");
             DateTime dateOfBirth = Convert.ToDateTime(Console.ReadLine());
             Console.Write("");
-            Console.WriteLine("Enter Administrator Nationality: ");
+            Console.Write("Enter Administrator Nationality: ");
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string nationality = Console.ReadLine();
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.

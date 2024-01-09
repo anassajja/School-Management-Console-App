@@ -42,7 +42,7 @@ namespace SCHOOL_MANAGEMENT_CONSOLE_APP
             Console.Write("Enter teacher ID: ");
             int id = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("");
-            Console.Write("Enter teacher hone number: ");
+            Console.Write("Enter teacher phone number: ");
             int phoneNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("");
             Console.Write("Enter teacher Email: ");
